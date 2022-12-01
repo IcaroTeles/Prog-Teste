@@ -43,4 +43,32 @@ inherited frmcadfuncionarios: Tfrmcadfuncionarios
       end
     end
   end
+  inherited qrycontrole: TZQuery
+    Connection = DtmConexao.conexaodb
+    Active = True
+    SQL.Strings = (
+      'select * from funcionarios')
+    object qrycontrolefuncionarioId: TIntegerField
+      FieldName = 'funcionarioId'
+      ReadOnly = True
+    end
+    object qrycontrolenome: TWideStringField
+      FieldName = 'nome'
+      Size = 60
+    end
+    object qrycontrolecpf: TWideStringField
+      FieldName = 'cpf'
+      Size = 60
+    end
+    object qrycontrolesenha: TWideStringField
+      FieldName = 'senha'
+      Size = 50
+    end
+    object qrycontroledatainclusao: TDateTimeField
+      FieldName = 'datainclusao'
+    end
+    object qrycontroledataedicao: TDateTimeField
+      FieldName = 'dataedicao'
+    end
+  end
 end

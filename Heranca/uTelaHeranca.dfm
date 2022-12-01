@@ -11,6 +11,8 @@ object frmheranca: Tfrmheranca
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  OnCreate = FormCreate
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object tabgeral: TPageControl
@@ -22,12 +24,14 @@ object frmheranca: Tfrmheranca
     Align = alClient
     TabOrder = 0
     object tabcontrole: TTabSheet
+      AlignWithMargins = True
       Caption = 'Controle'
       object grdcontrole: TDBGrid
-        Left = 0
-        Top = 0
-        Width = 498
-        Height = 214
+        AlignWithMargins = True
+        Left = 3
+        Top = 3
+        Width = 486
+        Height = 202
         Align = alClient
         DataSource = dtscontrole
         TabOrder = 0
@@ -36,11 +40,12 @@ object frmheranca: Tfrmheranca
         TitleFont.Height = -11
         TitleFont.Name = 'Tahoma'
         TitleFont.Style = []
+        OnDblClick = grdcontroleDblClick
       end
       object Panel1: TPanel
         Left = 0
-        Top = 214
-        Width = 498
+        Top = 208
+        Width = 492
         Height = 41
         Align = alBottom
         TabOrder = 1
@@ -51,6 +56,7 @@ object frmheranca: Tfrmheranca
           Height = 25
           Caption = 'Cadastrar'
           TabOrder = 0
+          OnClick = btncadastrarClick
         end
         object btneditar: TBitBtn
           Left = 246
@@ -59,6 +65,7 @@ object frmheranca: Tfrmheranca
           Height = 25
           Caption = 'Editar'
           TabOrder = 1
+          OnClick = btneditarClick
         end
         object btndeletar: TBitBtn
           Left = 327
@@ -67,6 +74,7 @@ object frmheranca: Tfrmheranca
           Height = 25
           Caption = 'Deletar'
           TabOrder = 2
+          OnClick = btndeletarClick
         end
         object btnsair: TBitBtn
           Left = 408
@@ -75,6 +83,7 @@ object frmheranca: Tfrmheranca
           Height = 25
           Caption = 'Sair'
           TabOrder = 3
+          OnClick = btnsairClick
         end
       end
     end
@@ -105,36 +114,31 @@ object frmheranca: Tfrmheranca
         ParentColor = True
         TabOrder = 0
         object btnok: TBitBtn
-          Left = 160
+          Left = 120
           Top = 8
           Width = 75
           Height = 25
           Caption = 'Ok'
           TabOrder = 0
+          OnClick = btnokClick
         end
         object btncancelar: TBitBtn
-          Left = 241
+          Left = 307
           Top = 8
           Width = 75
           Height = 25
           Caption = 'Cancelar'
           TabOrder = 1
+          OnClick = btncancelarClick
         end
         object btneditar2: TBitBtn
-          Left = 325
+          Left = 210
           Top = 8
           Width = 75
           Height = 25
           Caption = 'Editar'
           TabOrder = 2
-        end
-        object BitBtn8: TBitBtn
-          Left = 411
-          Top = 8
-          Width = 75
-          Height = 25
-          Caption = 'Sair'
-          TabOrder = 3
+          OnClick = btneditar2Click
         end
       end
       object dtinclusao: TDateEdit
@@ -152,6 +156,15 @@ object frmheranca: Tfrmheranca
         Height = 21
         NumGlyphs = 2
         TabOrder = 2
+      end
+      object btnsair2: TBitBtn
+        Left = 400
+        Top = 222
+        Width = 75
+        Height = 25
+        Caption = 'Sair'
+        TabOrder = 3
+        OnClick = btnsair2Click
       end
     end
   end

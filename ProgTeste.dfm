@@ -12,8 +12,28 @@ object frmMenu: TfrmMenu
   Font.Style = []
   Menu = MainMenu1
   OldCreateOrder = False
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
+  object imgfundo: TImage
+    Left = 0
+    Top = 0
+    Width = 447
+    Height = 201
+    Align = alClient
+    ExplicitLeft = 176
+    ExplicitTop = 48
+    ExplicitWidth = 105
+    ExplicitHeight = 105
+  end
+  object edtcaminho: TEdit
+    Left = 160
+    Top = 72
+    Width = 273
+    Height = 21
+    TabOrder = 0
+    Visible = False
+  end
   object MainMenu1: TMainMenu
     Left = 400
     Top = 168
@@ -22,6 +42,10 @@ object frmMenu: TfrmMenu
       object Configurao1: TMenuItem
         Caption = 'Configura'#231#227'o'
         OnClick = Configurao1Click
+      end
+      object MudarImagemdeFundo1: TMenuItem
+        Caption = 'Mudar Imagem de Fundo'
+        OnClick = MudarImagemdeFundo1Click
       end
     end
     object Cadastros1: TMenuItem
@@ -50,10 +74,16 @@ object frmMenu: TfrmMenu
       Caption = 'Relat'#243'rios'
       object Produtos2: TMenuItem
         Caption = 'Produtos'
+        OnClick = Produtos2Click
       end
       object Pedidos2: TMenuItem
         Caption = 'Pedidos'
+        OnClick = Pedidos2Click
       end
     end
+  end
+  object dlgimg: TOpenPictureDialog
+    Left = 344
+    Top = 120
   end
 end
